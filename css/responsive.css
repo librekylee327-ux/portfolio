@@ -70,7 +70,8 @@
     display: flex;
   }
 
-  .header-contact a {
+  .header-contact a,
+  .header-contact span {
     font-size: 11px;
   }
 

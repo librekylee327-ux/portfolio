@@ -33,7 +33,7 @@
   grid-template-columns: repeat(12, 1fr);
   column-gap: 24px;
   row-gap: 16px;
-  padding-top: calc(var(--header-height) + 80px);
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 80px);
   padding-bottom: 80px;
 }
 
@@ -55,7 +55,7 @@
 
 /* ════════════════════════════════════════════════════════════════
    WHAT I'M BUILDING
-   L: [4-col text] [1-col gap] [7-col caption]
+   L: [5-col text] [1-col gap] [6-col caption]
    ════════════════════════════════════════════════════════════════ */
 .ap-building {
   display: grid;
@@ -83,7 +83,7 @@
   line-height: 1.75;
 }
 
-/* column 5 = 1-column natural gap */
+/* column 6 = 1-column natural gap */
 
 .ap-building-caption {
   grid-column: 7 / -1;
@@ -101,7 +101,7 @@
 
 /* ════════════════════════════════════════════════════════════════
    CAREER PATHS
-   L: 4-column grid (each card = 3 of 12 columns)
+   L: 4-column grid
    ════════════════════════════════════════════════════════════════ */
 .ap-career {
   display: grid;
@@ -182,11 +182,9 @@
     padding: 0 var(--pad-tablet);
   }
 
-  /* Intro: full width */
   .ap-intro {
-    padding-top: calc(var(--header-height) + 64px);
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 64px);
     padding-bottom: 64px;
-    row-gap: 16px;
   }
 
   .ap-title,
@@ -194,7 +192,6 @@
     grid-column: 1 / -1;
   }
 
-  /* What I'm Building: text full width, caption below */
   .ap-building {
     padding: 64px 0;
     row-gap: 32px;
@@ -210,7 +207,6 @@
     grid-column: 1 / -1;
   }
 
-  /* Career: 2 columns */
   .ap-career {
     padding: 64px 0;
     row-gap: 32px;
@@ -231,7 +227,7 @@
   }
 
   .ap-intro {
-    padding-top: calc(var(--header-height) + 48px);
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 48px);
     padding-bottom: 48px;
   }
 
@@ -245,7 +241,6 @@
     row-gap: 24px;
   }
 
-  /* Career: 1 column */
   .ap-career-grid {
     grid-template-columns: 1fr;
     gap: 40px;
