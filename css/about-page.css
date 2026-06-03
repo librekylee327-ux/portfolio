@@ -1,0 +1,253 @@
+/* ════════════════════════════════════════════════════════════════
+   About Page — about-page.css
+   12-column grid (L) | 2-column (M ≤800px) | 1-column (S ≤480px)
+   gutter: 24px
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─── Page wrapper ───────────────────────────────────────────── */
+.about-page {
+  min-height: 100vh;
+}
+
+.about-page-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--pad-desktop);
+}
+
+/* ─── Shared section heading ─────────────────────────────────── */
+.ap-section-heading {
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   INTRO — title + bio
+   L: title & bio span 6 of 12 columns (left half)
+   ════════════════════════════════════════════════════════════════ */
+.ap-intro {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+  padding-top: calc(var(--header-height) + 80px);
+  padding-bottom: 80px;
+}
+
+.ap-title {
+  grid-column: 1 / 7;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.ap-bio {
+  grid-column: 1 / 7;
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--color-fg-muted);
+  line-height: 1.75;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   WHAT I'M BUILDING
+   L: [4-col text] [1-col gap] [7-col caption]
+   ════════════════════════════════════════════════════════════════ */
+.ap-building {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
+  padding: 80px 0;
+}
+
+.ap-building > .ap-section-heading {
+  grid-column: 1 / -1;
+}
+
+.ap-building-body {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+}
+
+.ap-building-text {
+  grid-column: 1 / 6;
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--color-fg-muted);
+  line-height: 1.75;
+}
+
+/* column 5 = 1-column natural gap */
+
+.ap-building-caption {
+  grid-column: 7 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: start;
+}
+
+.ap-building-caption li {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CAREER PATHS
+   L: 4-column grid (each card = 3 of 12 columns)
+   ════════════════════════════════════════════════════════════════ */
+.ap-career {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
+  padding: 80px 0;
+}
+
+.ap-career > .ap-section-heading {
+  grid-column: 1 / -1;
+}
+
+.ap-career-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ─── Career Card ────────────────────────────────────────────── */
+.ap-career-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ap-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.ap-company-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-fg);
+  letter-spacing: -0.01em;
+}
+
+.ap-company-type {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+}
+
+.ap-card-role {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-fg);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.ap-card-period {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.ap-card-desc {
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  line-height: 1.65;
+}
+
+.ap-card-desc + .ap-card-desc {
+  margin-top: 16px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet ≤ 800px (2-column)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 800px) {
+  .about-page-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  /* Intro: full width */
+  .ap-intro {
+    padding-top: calc(var(--header-height) + 64px);
+    padding-bottom: 64px;
+    row-gap: 16px;
+  }
+
+  .ap-title,
+  .ap-bio {
+    grid-column: 1 / -1;
+  }
+
+  /* What I'm Building: text full width, caption below */
+  .ap-building {
+    padding: 64px 0;
+    row-gap: 32px;
+  }
+
+  .ap-building-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .ap-building-text,
+  .ap-building-caption {
+    grid-column: 1 / -1;
+  }
+
+  /* Career: 2 columns */
+  .ap-career {
+    padding: 64px 0;
+    row-gap: 32px;
+  }
+
+  .ap-career-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile ≤ 480px (1-column)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .about-page-inner {
+    padding: 0 var(--pad-mobile);
+  }
+
+  .ap-intro {
+    padding-top: calc(var(--header-height) + 48px);
+    padding-bottom: 48px;
+  }
+
+  .ap-building {
+    padding: 48px 0;
+    row-gap: 24px;
+  }
+
+  .ap-career {
+    padding: 48px 0;
+    row-gap: 24px;
+  }
+
+  /* Career: 1 column */
+  .ap-career-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

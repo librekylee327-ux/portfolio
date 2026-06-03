@@ -37,7 +37,7 @@
   }
 
   // ─── Nav: Works ──────────────────────────────────────────────
-  document.querySelectorAll('a[href="#works"]').forEach(function (link) {
+  document.querySelectorAll('a[href="#works"], a[href="index.html#works"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       showWorks();
