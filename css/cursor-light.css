@@ -1,0 +1,23 @@
+#cursorLight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+  background: radial-gradient(
+    280px circle at var(--mx, -9999px) var(--my, -9999px),
+    rgba(200, 200, 220, 0.035),
+    transparent 70%
+  );
+}
+
+#cursorLight.is-active {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  #cursorLight {
+    display: none;
+  }
+}

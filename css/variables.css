@@ -1,0 +1,35 @@
+:root {
+  /* Colors — surfaces */
+  --color-bg:             #0d0d0d;
+  --color-bg-hero:        #111111;
+
+  /* Colors — text hierarchy */
+  /* --color-fg       10.7:1 contrast — primary body text, softer than pure white */
+  /* --color-fg-muted  4.9:1 contrast — secondary labels, captions (WCAG AA ✓)   */
+  /* --color-fg-dim    2.5:1           — decorative only, never for readable text  */
+  /* --color-fg-overlay 21:1           — text on dark images / transparent header */
+  --color-fg:             #c0c0c0;
+  --color-fg-muted:       #808080;
+  --color-fg-dim:         #484848;
+  --color-fg-overlay:     #e8e8e8;
+
+  /* Colors — borders */
+  --color-border:         rgba(255, 255, 255, 0.10);
+  --color-border-strong:  rgba(255, 255, 255, 0.16);
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --header-height:      52px;
+  --container-max:      1440px;
+  --pad-desktop:        10px;
+  --pad-tablet:         10px;
+  --pad-mobile:         20px;
+
+  /* Animation */
+  --marquee-duration:   32s;
+  --ease-out:           cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast:    120ms ease;
+  --transition-base:    220ms ease;
+}

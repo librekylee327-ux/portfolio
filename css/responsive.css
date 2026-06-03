@@ -1,0 +1,126 @@
+/* ════════════════════════════════════════════════════════════════
+   Responsive — desktop-first
+   Breakpoints: 800px (tablet)  |  480px (mobile)
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─── Tablet: ≤ 800px ────────────────────────────────────────── */
+@media (max-width: 800px) {
+
+  /* Header: tighter padding, hide role — 5 items remain: KYLE | Works | About | contact | in Seoul */
+  .header-inner {
+    padding: 14px var(--pad-tablet) 0;
+  }
+
+  .header-role {
+    display: none;
+  }
+
+  /* Hero */
+  .hero-nav--prev { left: var(--pad-tablet); }
+  .hero-nav--next { right: var(--pad-tablet); }
+
+  /* About Me */
+  .about-inner {
+    padding: 64px var(--pad-tablet);
+  }
+
+  /* Worked With */
+  .worked-with-inner {
+    padding: 48px 0 48px var(--pad-tablet);
+  }
+
+  /* Works page */
+  .works-page-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  .works-heading {
+    font-size: 30px;
+    margin-bottom: 32px;
+  }
+
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── Mobile: ≤ 480px ────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Header: 3 items remain — KYLE | contact | hamburger */
+  .header-inner {
+    padding: 14px var(--pad-mobile) 0;
+  }
+
+  /* Hide nav links individually (nav itself is display:contents) */
+  .nav-link {
+    display: none;
+  }
+
+  .header-role,
+  .header-location {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .header-contact a {
+    font-size: 11px;
+  }
+
+  /* Hero */
+  .hero-nav {
+    font-size: 12px;
+    top: auto;
+    transform: none;
+    bottom: 20px;
+  }
+
+  .hero-nav--prev { left: var(--pad-mobile); }
+  .hero-nav--next { right: var(--pad-mobile); }
+
+  /* About Me — single column */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 48px var(--pad-mobile);
+  }
+
+  /* Worked With — label stacks above marquee */
+  .worked-with-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 0 40px var(--pad-mobile);
+  }
+
+  .brand-logo {
+    height: clamp(28px, 8vw, 44px);
+  }
+
+  /* Works page */
+  .works-page {
+    padding-top: calc(var(--header-height) + 32px);
+    padding-bottom: 48px;
+  }
+
+  .works-page-inner {
+    padding: 0 var(--pad-mobile);
+  }
+
+  .works-heading {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .works-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 24px;
+  }
+}

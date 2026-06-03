@@ -1,0 +1,72 @@
+.worked-with {
+  border-top: 1px solid var(--color-border);
+}
+
+.worked-with-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+  padding: 64px 0 64px var(--pad-desktop);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ─── Marquee track ──────────────────────────────────────────── */
+.marquee-outer {
+  overflow: hidden;
+  /* Soft fade at left and right edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration) linear infinite;
+  will-change: transform;
+}
+
+.marquee-outer:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Brand logo images ──────────────────────────────────────── */
+.marquee-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  height: clamp(29px, 4vw, 52px);
+  width: auto;
+  object-fit: contain;
+  /* Force white on dark background */
+  filter: brightness(0) invert(1);
+  opacity: 0.75;
+  transition: opacity var(--transition-fast);
+}
+
+.marquee-item:hover .brand-logo {
+  opacity: 1;
+}

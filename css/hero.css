@@ -1,0 +1,81 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-bg-hero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clips the zoom effect to hero bounds */
+.hero-image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Slide: hidden by default, active slide fades in and zooms */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform-origin: center center;
+  transform: scale(1);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 4s linear, opacity 2s ease;
+}
+
+.hero-slide--active {
+  opacity: 1;
+}
+
+.hero-slide--zoomed {
+  transform: scale(1.15);
+}
+
+/* ─── Prev / Next controls ───────────────────────────────────── */
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-fg-overlay);
+  z-index: 10;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.hero-nav:hover {
+  color: var(--color-fg-overlay);
+}
+
+.hero-nav--prev {
+  left: var(--pad-desktop);
+}
+
+.hero-nav--next {
+  right: var(--pad-desktop);
+}
+
+.hero-nav svg {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.hero-nav--prev:hover svg {
+  transform: translateX(-3px);
+}
+
+.hero-nav--next:hover svg {
+  transform: translateX(3px);
+}

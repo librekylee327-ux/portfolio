@@ -1,0 +1,21 @@
+.about-me {
+  border-top: 1px solid var(--color-border);
+  scroll-margin-top: var(--header-height);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--space-section, 0);
+  padding: 80px var(--pad-desktop);
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.about-body p {
+  font-size: clamp(14px, 1.15vw, 16px);
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  line-height: 1.75;
+  width: 100%;
+}
