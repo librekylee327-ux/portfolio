@@ -6,7 +6,7 @@
 /* ─── Tablet: ≤ 800px ────────────────────────────────────────── */
 @media (max-width: 800px) {
 
-  /* Header: tighter padding, hide role — 5 items remain: KYLE | Works | About | contact | in Seoul */
+  /* Header: tighter padding, hide role — KYLE | Works | About | Blog | contact */
   .header-inner {
     padding: 14px var(--pad-tablet) 0;
   }
@@ -47,7 +47,7 @@
 /* ─── Mobile: ≤ 480px ────────────────────────────────────────── */
 @media (max-width: 480px) {
 
-  /* Header: 3 items remain — KYLE | contact | hamburger */
+  /* Header: 3 items remain — KYLE | contact | hamburger (nav links → mobile drawer) */
   .header-inner {
     padding: 14px var(--pad-mobile) 0;
   }
@@ -57,8 +57,7 @@
     display: none;
   }
 
-  .header-role,
-  .header-location {
+  .header-role {
     display: none;
   }
 

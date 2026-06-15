@@ -47,7 +47,8 @@
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link--active {
   color: var(--color-fg);
 }
 
@@ -83,7 +84,7 @@
 .header-role {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 2px;
 }
 
