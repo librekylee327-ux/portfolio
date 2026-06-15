@@ -1,0 +1,185 @@
+/* ════════════════════════════════════════════════════════════════
+   Blog Page — blog-page.css
+   12-column grid (L) | 2-column (M ≤800px) | 1-column (S ≤480px)
+   gutter: 24px
+   ════════════════════════════════════════════════════════════════ */
+
+/* ─── Page wrapper ───────────────────────────────────────────── */
+.blog-page {
+  min-height: 100vh;
+}
+
+.blog-page-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--pad-desktop);
+}
+
+/* ─── Shared section heading ─────────────────────────────────── */
+.bp-section-heading {
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   INTRO — title + description
+   L: spans left 6 of 12 columns
+   ════════════════════════════════════════════════════════════════ */
+.bp-intro {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 16px;
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 80px);
+  padding-bottom: 80px;
+}
+
+.bp-title {
+  grid-column: 1 / 7;
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-fg-muted);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.bp-desc {
+  grid-column: 1 / 7;
+  font-size: clamp(14px, 1.15vw, 16px);
+  color: var(--color-fg-muted);
+  line-height: 1.75;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   POST LIST
+   L: 3-column card grid
+   ════════════════════════════════════════════════════════════════ */
+.bp-posts {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  row-gap: 40px;
+  padding: 80px 0;
+}
+
+.bp-posts > .bp-section-heading {
+  grid-column: 1 / -1;
+}
+
+.bp-posts-grid {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ─── Post Card ──────────────────────────────────────────────── */
+.bp-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.bp-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bp-post-date {
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  line-height: 1.4;
+}
+
+.bp-post-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-fg-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.bp-post-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-fg);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.bp-post-excerpt {
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.bp-post-link {
+  align-self: start;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.bp-post-link:hover {
+  color: var(--color-fg);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablet ≤ 800px (2-column)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 800px) {
+  .blog-page-inner {
+    padding: 0 var(--pad-tablet);
+  }
+
+  .bp-intro {
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 64px);
+    padding-bottom: 64px;
+  }
+
+  .bp-title,
+  .bp-desc {
+    grid-column: 1 / -1;
+  }
+
+  .bp-posts {
+    padding: 64px 0;
+    row-gap: 32px;
+  }
+
+  .bp-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — Mobile ≤ 480px (1-column)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .blog-page-inner {
+    padding: 0 var(--pad-mobile);
+  }
+
+  .bp-intro {
+    padding-top: calc(var(--header-height) + env(safe-area-inset-top) + 48px);
+    padding-bottom: 48px;
+  }
+
+  .bp-posts {
+    padding: 48px 0;
+    row-gap: 24px;
+  }
+
+  .bp-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
