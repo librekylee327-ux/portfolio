@@ -94,14 +94,6 @@
   white-space: nowrap;
 }
 
-/* ─── Location ───────────────────────────────────────────────── */
-.header-location {
-  font-size: 12px;
-  color: var(--color-fg-overlay);
-  line-height: 1;
-  white-space: nowrap;
-}
-
 /* ─── Hamburger (hidden on desktop/tablet) ───────────────────── */
 .hamburger {
   display: none;
