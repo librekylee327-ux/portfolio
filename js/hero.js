@@ -8,7 +8,13 @@
   let timer   = null;
   let busy    = false;
 
+  // Pending reset timers, tracked per slide so a slide that becomes active
+  // again (via Prev/Next) can cancel its own stale reset before it fires.
+  const resetTimers = new Array(slides.length).fill(null);
+
   function resetSlide(slide) {
+    // Guard: never strip the zoom from a slide that is active again.
+    if (slide.classList.contains('hero-slide--active')) return;
     slide.style.transition = 'none';
     slide.classList.remove('hero-slide--zoomed');
     requestAnimationFrame(function () {
@@ -29,8 +35,15 @@
     if (busy) return;
     busy = true;
 
-    const outSlide = slides[current];
+    const outIndex = current;
+    const outSlide = slides[outIndex];
     const inSlide  = slides[nextIndex];
+
+    // Cancel any pending reset for the incoming slide so it keeps its zoom.
+    if (resetTimers[nextIndex]) {
+      clearTimeout(resetTimers[nextIndex]);
+      resetTimers[nextIndex] = null;
+    }
 
     inSlide.classList.add('hero-slide--active');
     requestAnimationFrame(function () {
@@ -43,7 +56,11 @@
 
     // Release lock after overlap so rapid clicks feel responsive
     setTimeout(function () { busy = false; }, OVERLAP);
-    setTimeout(function () { resetSlide(outSlide); }, FADE_MS);
+    if (resetTimers[outIndex]) clearTimeout(resetTimers[outIndex]);
+    resetTimers[outIndex] = setTimeout(function () {
+      resetTimers[outIndex] = null;
+      resetSlide(outSlide);
+    }, FADE_MS);
   }
 
   // ─── Init first slide ────────────────────────────────────────
@@ -61,12 +78,10 @@
 
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', function () {
-      if (timer) clearTimeout(timer);
       goTo((current - 1 + slides.length) % slides.length);
     });
 
     nextBtn.addEventListener('click', function () {
-      if (timer) clearTimeout(timer);
       goTo((current + 1) % slides.length);
     });
   }
