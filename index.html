@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="KYLE — Product Designer & Founder">
   <meta name="twitter:image" content="https://leejaekyo.netlify.app/assets/images/OG Image.png">
-  <link rel="preload" as="image" href="assets/images/hero-laptop.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/images/hero-Handoff.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -46,6 +46,15 @@
           Projects <span class="works-page-count"></span>
         </h1>
         <div class="works-grid">
+          <article class="work-card">
+            <p class="work-card-title">Handoff</p>
+            <div class="work-card-thumb">
+              <picture>
+                <source srcset="assets/images/hero-Handoff.webp" type="image/webp">
+                <img src="assets/images/hero-Handoff.webp" alt="Handoff" loading="lazy">
+              </picture>
+            </div>
+          </article>
           <article class="work-card">
             <p class="work-card-title">Deltai</p>
             <div class="work-card-thumb">
@@ -121,9 +130,14 @@
       <section class="hero" id="works" aria-label="Featured work">
         <div class="hero-image-wrapper">
           <picture>
+            <source srcset="assets/images/hero-Handoff.webp" type="image/webp">
+            <img src="assets/images/hero-Handoff.webp" alt="Project showcase: Handoff"
+              class="hero-slide" id="heroSlideHandoff" fetchpriority="high">
+          </picture>
+          <picture>
             <source srcset="assets/images/hero-laptop.webp" type="image/webp">
             <img src="assets/images/hero-laptop.png" alt="Project showcase: MacBook displaying Create your Agent UI"
-              class="hero-slide" id="heroSlideA" fetchpriority="high">
+              class="hero-slide" id="heroSlideA" loading="lazy">
           </picture>
           <picture>
             <source srcset="assets/images/hero-Classu.webp" type="image/webp">

@@ -6,8 +6,8 @@
 
   if (!viewHome || !viewWorks) return;
 
-  // ─── Count projects and sync all count labels ────────────────
-  var count = viewWorks.querySelectorAll('.work-card').length;
+  // ─── Sync all count labels from single source (header.js) ─────
+  var count = window.WORKS_COUNT;
   var pageCount = viewWorks.querySelector('.works-page-count');
   if (pageCount) pageCount.textContent = '(' + count + ')';
   document.querySelectorAll('.works-count').forEach(function (el) {

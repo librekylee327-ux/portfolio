@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // 프로젝트 개수 단일 소스. 카드 추가/삭제 시 여기만 갱신.
+  var WORKS_COUNT = window.WORKS_COUNT = 8;
+
   var path = window.location.pathname;
   var isHome = !path.endsWith('about.html') && !path.endsWith('blog.html');
   var worksHref = isHome ? '#works' : 'index.html#works';
@@ -11,7 +14,7 @@
         '<img src="assets/images/header-logo.svg" alt="KYLE" class="logo-img">' +
       '</a>' +
       '<nav class="header-nav" aria-label="Main navigation">' +
-        '<a href="' + worksHref + '" class="nav-link">Works <span class="works-count">(7)</span></a>' +
+        '<a href="' + worksHref + '" class="nav-link">Works <span class="works-count">(' + WORKS_COUNT + ')</span></a>' +
         '<a href="about.html" class="nav-link">About</a>' +
         '<a href="blog.html" class="nav-link">Blog</a>' +
       '</nav>' +
@@ -30,7 +33,7 @@
       '</button>' +
     '</div>' +
     '<nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Mobile navigation">' +
-      '<a href="' + worksHref + '">Works <span class="works-count">(7)</span></a>' +
+      '<a href="' + worksHref + '">Works <span class="works-count">(' + WORKS_COUNT + ')</span></a>' +
       '<a href="about.html">About</a>' +
       '<a href="blog.html">Blog</a>' +
     '</nav>' +
