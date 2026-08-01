@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Blog — KYLE</title>
+  <title>Post — KYLE</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <!-- Open Graph -->
-  <meta property="og:title" content="Blog — KYLE">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://leejaekyo.netlify.app/blog.html">
+  <meta property="og:title" content="Post — KYLE">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://leejaekyo.netlify.app/post.html">
   <meta property="og:image" content="https://leejaekyo.netlify.app/assets/images/OG Image.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Blog — KYLE">
+  <meta name="twitter:title" content="Post — KYLE">
   <meta name="twitter:image" content="https://leejaekyo.netlify.app/assets/images/OG Image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,41 +34,27 @@
 
   <div id="header-placeholder"></div>
 
-  <main class="blog-page">
-    <div class="blog-page-inner">
-
-      <!-- ─── Intro ─────────────────────────────────────────────── -->
-      <section class="bp-intro" aria-labelledby="bp-title">
-        <h1 class="bp-title" id="bp-title">Blog</h1>
-        <p class="bp-desc">창업을 준비하면서 경험한 이벤트, 고민, 인사이트 등을 기록하는 공간입니다. 창업 경험과 더해 서비스를 빌딩하면서 느낀 프로덕트 디자이너의 인사이트, 생각들도 기록합니다.</p>
-      </section>
-
-      <!-- ─── Post List ─────────────────────────────────────────── -->
-      <section class="bp-posts" aria-labelledby="bp-posts-heading">
-        <h2 class="bp-section-heading" id="bp-posts-heading">All Posts</h2>
-        <!-- 카드는 js/posts.js 데이터로 js/blog.js 가 렌더 -->
-        <div class="bp-posts-grid"></div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- ─── Post overlay layer (blog 위로 슬라이드업, GNB 아래 레이어) ─── -->
-  <div class="post-layer" id="postLayer" aria-hidden="true" role="dialog" aria-label="Blog post">
+  <main class="post-page">
     <div class="post-page-inner">
+
       <article class="post-article">
+
+        <!-- 내용은 ?id 로 js/posts.js 에서 js/blog.js 가 채움 -->
         <header class="post-header">
-          <a href="blog.html" class="post-back" data-close>&lsaquo; Back to Blog</a>
+          <a href="blog.html" class="post-back">&lsaquo; Back to Blog</a>
           <div class="post-meta">
             <span class="post-date"></span>
             <span class="post-tag"></span>
           </div>
           <h1 class="post-title"></h1>
         </header>
+
         <div class="post-body"></div>
+
       </article>
+
     </div>
-  </div>
+  </main>
 
   <script src="js/header.js"></script>
   <script src="js/cursor-light.js"></script>
