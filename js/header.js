@@ -5,7 +5,7 @@
   var WORKS_COUNT = window.WORKS_COUNT = 8;
 
   var path = window.location.pathname;
-  var isHome = !path.endsWith('about.html') && !path.endsWith('blog.html');
+  var isHome = !path.endsWith('about.html') && !path.endsWith('blog.html') && !path.endsWith('post.html');
   var worksHref = isHome ? '#works' : 'index.html#works';
 
   var headerHTML = '<header class="site-header" role="banner">' +
