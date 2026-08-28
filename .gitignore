@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+
+# tools/build-blog.js 생성물 — 커밋하지 않는다
+/blog/*.html
+/sitemap.xml

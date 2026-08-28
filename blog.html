@@ -32,7 +32,36 @@
 <body>
   <div id="cursorLight" aria-hidden="true"></div>
 
-  <div id="header-placeholder"></div>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="logo" href="/" aria-label="KYLE — Home">
+        <img src="/assets/images/header-logo.svg" alt="KYLE" class="logo-img">
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/#works" class="nav-link">Works <span class="works-count"></span></a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/blog" class="nav-link nav-link--active">Blog</a>
+      </nav>
+      <div class="header-contact">
+        <a href="mailto:librekylee327@gmail.com">librekylee327@gmail.com</a>
+        <a href="tel:+821088358992">+(82) 10 - 8835 - 8992</a>
+      </div>
+      <div class="header-role">
+        <span>Product Designer</span>
+        <span>Founder</span>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Mobile navigation">
+      <a href="/#works">Works <span class="works-count"></span></a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+    </nav>
+  </header>
 
   <main class="blog-page">
     <div class="blog-page-inner">

@@ -1,0 +1,2 @@
+/post.html  id=:id  /blog/:id  301
+/post       id=:id  /blog/:id  301

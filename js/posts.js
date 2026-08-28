@@ -23,7 +23,7 @@ window.POSTS = [
     id: 'resignation-review-pivot',
     date: '2026. 08. 10',
     tag: '회고',
-    title: '호기롭게 퇴사 5개월차 회고',
+    title: '탈락 두 번, 피봇 두 번',
     excerpt: '탈락 두 번, 피봇 두 번, 그리고 레포 하나.',
     body:
       '<h2>탈락 두 번, 피봇 두 번, 그리고 레포 하나</h2>' +
@@ -80,7 +80,7 @@ window.POSTS = [
   }
   ,
   {
-    id: 'blo-start',
+    id: 'portfolio-site-built',
     date: '2026. 06. 18',
     tag: '계획',
     title: '포트폴리오 웹사이트를 버티컬 서비스 없이 구현했습니다.',
