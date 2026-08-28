@@ -43,7 +43,7 @@
       '</div>' +
       '<h3 class="bp-post-title">' + p.title + '</h3>' +
       '<p class="bp-post-excerpt">' + p.excerpt + '</p>' +
-      '<a href="post.html?id=' + encodeURIComponent(p.id) + '" class="bp-post-link">Read &rsaquo;</a>' +
+      '<a href="/blog/' + encodeURIComponent(p.id) + '" class="bp-post-link">Read &rsaquo;</a>' +
     '</article>';
   }).join('');
 
@@ -90,7 +90,7 @@
     var link = card.querySelector('.bp-post-link');
     if (!link) return;
     e.preventDefault();
-    openPost(new URL(link.href).searchParams.get('id'), true);
+    openPost(decodeURIComponent(new URL(link.href).pathname.replace(/^\/blog\//, '')), true);
   });
 
   // Back to Blog / 닫기 버튼
