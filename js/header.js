@@ -1,8 +1,8 @@
 (function () {
   'use strict';
 
-  // 프로젝트 개수 단일 소스. 카드 추가/삭제 시 여기만 갱신.
-  window.WORKS_COUNT = 8;
+  // Works 전체 개수(Services + Projects) 단일 소스. 카드 추가/삭제 시 여기만 갱신.
+  window.WORKS_COUNT = 14;
 
   // 헤더 마크업은 각 HTML 에 정적으로 박혀 있다. 숫자만 여기서 채운다.
   document.querySelectorAll('.works-count').forEach(function (el) {

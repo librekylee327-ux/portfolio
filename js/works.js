@@ -6,10 +6,26 @@
 
   if (!viewHome || !viewWorks) return;
 
-  // ─── Sync all count labels from single source (header.js) ─────
+  // ─── Group counts: counted from the cards actually in each grid ─
+  viewWorks.querySelectorAll('.works-page-count[data-count-for]').forEach(function (el) {
+    var grid = document.getElementById(el.getAttribute('data-count-for'));
+    if (grid) el.textContent = '(' + grid.children.length + ')';
+  });
+
+  // ─── Projects accordion: 줄을 누르면 설명·프로세스가 열린다 ──────
+  // 여러 개를 함께 열어 비교할 수 있게 서로 닫지 않는다.
+  viewWorks.querySelectorAll('.project-item-toggle').forEach(function (toggle) {
+    var item = toggle.closest('.project-item');
+    if (!item) return;
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      item.classList.toggle('is-open', open);
+    });
+  });
+
+  // ─── Header total from single source (header.js) ─────────────
   var count = window.WORKS_COUNT;
-  var pageCount = viewWorks.querySelector('.works-page-count');
-  if (pageCount) pageCount.textContent = '(' + count + ')';
   document.querySelectorAll('.works-count').forEach(function (el) {
     el.textContent = '(' + count + ')';
   });

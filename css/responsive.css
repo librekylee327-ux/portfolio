@@ -42,6 +42,27 @@
   .works-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .works-group {
+    margin-top: 88px;
+  }
+
+  .works-group-lead {
+    margin-bottom: 32px;
+  }
+
+  /* Projects accordion: 분류 칸을 빼고 제목에 폭을 준다 */
+  .project-item-toggle {
+    grid-template-columns: 96px minmax(0, 1fr) 150px 24px;
+  }
+
+  .project-item-type {
+    display: none;
+  }
+
+  .project-item-panel-inner {
+    margin-left: 112px;
+  }
 }
 
 /* ─── Mobile: ≤ 480px ────────────────────────────────────────── */
@@ -122,5 +143,48 @@
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 24px;
+  }
+
+  .works-group {
+    margin-top: 64px;
+  }
+
+  .works-group-lead {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  /* Projects accordion: 시기·숫자는 제목 아래 한 줄로 */
+  .project-item-toggle {
+    grid-template-columns: minmax(0, 1fr) 24px;
+    grid-template-areas:
+      "title icon"
+      "meta  icon";
+    row-gap: 6px;
+    padding: 18px 0;
+  }
+
+  .project-item-title {
+    grid-area: title;
+    font-size: 17px;
+  }
+
+  .project-item-date {
+    grid-area: meta;
+  }
+
+  .project-item-stat {
+    grid-area: meta;
+    justify-self: end;
+    font-size: 12px;
+  }
+
+  .project-item-icon {
+    grid-area: icon;
+  }
+
+  .project-item-panel-inner {
+    margin-left: 0;
+    padding-bottom: 22px;
   }
 }
