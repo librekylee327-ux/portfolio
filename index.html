@@ -72,9 +72,9 @@
     <section class="works-page" aria-labelledby="works-heading">
       <div class="works-page-inner">
         <h1 class="works-heading" id="works-heading">
-          Projects <span class="works-page-count"></span>
+          Services <span class="works-page-count" data-count-for="servicesGrid"></span>
         </h1>
-        <div class="works-grid">
+        <div class="works-grid" id="servicesGrid">
           <article class="work-card">
             <p class="work-card-title">Handoff</p>
             <div class="work-card-thumb">
@@ -147,6 +147,136 @@
               </picture>
             </div>
           </article>
+        </div>
+
+        <!-- ─── Projects: pipelines & automation (accordion list, no thumbnail) ── -->
+        <div class="works-group" role="region" aria-labelledby="projects-heading">
+          <h2 class="works-heading works-heading--group" id="projects-heading">
+            Projects <span class="works-page-count" data-count-for="projectsGrid"></span>
+          </h2>
+          <p class="works-group-lead">AX-native. Systems I vibe-coded to run our startup.</p>
+          <ul class="project-list" id="projectsGrid">
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-donna-personal-assistant" id="toggle-donna-personal-assistant">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Donna — Personal Assistant</span>
+                  <span class="project-item-type">Agent</span>
+                  <span class="project-item-stat">4 reports / day</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-donna-personal-assistant" role="region" aria-labelledby="toggle-donna-personal-assistant">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">Slack assistant that briefs my day, triages mail and books my calendar.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Mail</li><li>Calendar</li><li>Notes</li><li>Triage</li><li>Slack</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>Slack Bolt</li><li>Gmail</li><li>Google Calendar</li><li>launchd</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-weekly-reels-pipeline" id="toggle-weekly-reels-pipeline">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Weekly Reels Pipeline</span>
+                  <span class="project-item-type">Automation</span>
+                  <span class="project-item-stat">½ day → 1h 20m</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-weekly-reels-pipeline" role="region" aria-labelledby="toggle-weekly-reels-pipeline">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">One brief in, a week of short-form out. Reads its own metrics to plan the next episode.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Brief</li><li>Storyboard</li><li>Clips</li><li>Compose</li><li>Publish</li><li>Metrics</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>Python</li><li>FFmpeg</li><li>Higgsfield · Kling</li><li>YouTube · Instagram</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-job-mapping-pipeline" id="toggle-job-mapping-pipeline">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Job Mapping Pipeline</span>
+                  <span class="project-item-type">Research automation</span>
+                  <span class="project-item-stat">474 → 288</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-job-mapping-pipeline" role="region" aria-labelledby="toggle-job-mapping-pipeline">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">Turns 474 practitioner posts into a job agent's knowledge map — rerunnable for every new role.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Collect</li><li>Classify</li><li>Extract</li><li>Map</li><li>Verify</li><li>Scope sim</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>Python</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-persona-evidence-crawl" id="toggle-persona-evidence-crawl">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Persona Evidence Crawl</span>
+                  <span class="project-item-type">Research</span>
+                  <span class="project-item-stat">8,000+ → 92</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-persona-evidence-crawl" role="region" aria-labelledby="toggle-persona-evidence-crawl">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">Crawled 8,000+ community posts to put our persona on evidence, not my guess.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Crawl</li><li>Filter</li><li>Code</li><li>Grade</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>Python crawler</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-harness" id="toggle-harness">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Harness</span>
+                  <span class="project-item-type">Agent system</span>
+                  <span class="project-item-stat">35 → 13</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-harness" role="region" aria-labelledby="toggle-harness">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">My Claude Code setup: 9 job agents and 10 hooks that enforce the rules and keep every doc in sync.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Route</li><li>Job agent</li><li>Hooks</li><li>Doc sync</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>Hooks</li><li>Skills</li><li>Python · Bash</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project-item">
+              <h3 class="project-item-heading">
+                <button class="project-item-toggle" type="button" aria-expanded="false" aria-controls="panel-lead-user-research" id="toggle-lead-user-research">
+                  <span class="project-item-date">2026</span>
+                  <span class="project-item-title">Lead User Research</span>
+                  <span class="project-item-type">Research</span>
+                  <span class="project-item-stat">38 gaps</span>
+                  <span class="project-item-icon" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="project-item-panel" id="panel-lead-user-research" role="region" aria-labelledby="toggle-lead-user-research">
+                <div class="project-item-panel-clip">
+                  <div class="project-item-panel-inner">
+                    <p class="project-item-desc">My own build process as data — 38 friction points the product is designed on.</p>
+                    <ol class="project-item-flow" aria-label="Process"><li>Observe</li><li>Sequence</li><li>Gap logic</li><li>Hypotheses</li></ol>
+                    <ul class="project-item-stack" aria-label="Built with"><li>Claude Code</li><li>HTML</li></ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
