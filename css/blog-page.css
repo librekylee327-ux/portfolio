@@ -273,6 +273,28 @@ html {
   color: var(--color-fg-overlay);
 }
 
+.post-body figure {
+  margin: 32px 0 40px;
+}
+
+.post-body figure img {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+.post-body figcaption {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-fg-muted);
+}
+
 /* ════════════════════════════════════════════════════════════════
    RESPONSIVE — Tablet ≤ 800px (2-column)
    ════════════════════════════════════════════════════════════════ */
